@@ -38,14 +38,19 @@ $aModule = array(
                         ),
     'blocks'       => array(
                         array(
+                            'template' => 'user_main.tpl', 
+                            'block'    => 'admin_user_main_form',                     
+                            'file'     => '/out/blocks/admin_user_main_form.tpl'
+                          ),
+                        array(
                             'template' => 'order_overview.tpl', 
                             'block'    => 'admin_order_overview_billingaddress',                     
                             'file'     => '/out/blocks/admin_order_overview_billingaddress.tpl'
                           ),
                         ),
     'events'       => array(/*
-                        'onActivate'   => 'jxadminlog_events::onActivate', 
-                        'onDeactivate' => 'jxadminlog_events::onDeactivate'
+                        'onActivate'   => 'jxjiraconnect_events::onActivate', 
+                        'onDeactivate' => 'jxjiraconnect_events::onDeactivate'
                         */),
     'settings' => array(
                         array(

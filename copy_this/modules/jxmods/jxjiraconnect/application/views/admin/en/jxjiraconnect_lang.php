@@ -11,6 +11,9 @@ $aLang = array(
     
 	'jxjiraconnect_menu'                	=> 'JIRA Issues',
     
+        'JXJIRA_OPENISSUE' => 'open issue',
+        'JXJIRA_OPENISSUES' => 'open issues',
+    
         'JXJIRA_STATUSICON' => 'S',
         'JXJIRA_KEY' => 'Key',
         'JXJIRA_SUMMARY' => 'Summary',

@@ -81,6 +81,11 @@ class jxjiraconnect_details extends oxAdminDetails {
                 $oUser = $oOrder->getOrderUser();
                 $sCustomerNumber = $oUser->oxuser__oxcustnr->value;
                 //$sCustomerEMail = $oOrder->oxorder__oxbillemail->value;
+            } else {
+                $oUser = oxNew("oxuser");
+                if ($oUser->load($soxId)) {
+                    $sCustomerNumber = $oUser->oxuser__oxcustnr->value;
+                }
             }
         }
         $aData = array(
@@ -97,7 +102,7 @@ class jxjiraconnect_details extends oxAdminDetails {
 
         /*echo '<pre>';
         print_r(json_decode(json_encode($aData),JSON_PRETTY_PRINT));
-        echo '</pre>';*/
+        echo '</pre>';/**/
   
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_VERBOSE, 1);
@@ -156,6 +161,12 @@ class jxjiraconnect_details extends oxAdminDetails {
                 $oUser = $oOrder->getOrderUser();
                 $sCustomerNumber = $oUser->oxuser__oxcustnr->value;
                 $sCustomerEMail = $oOrder->oxorder__oxbillemail->value;
+            } else {
+                $oUser = oxNew("oxuser");
+                if ($oUser->load($soxId)) {
+                    $sCustomerNumber = $oUser->oxuser__oxcustnr->value;
+                    $sCustomerEMail = $oUser->oxuser__oxusername->value;
+                }
             }
         }
         
@@ -211,7 +222,7 @@ class jxjiraconnect_details extends oxAdminDetails {
         if ($ch_error) {
             echo "cURL Error: $ch_error";
         } else {
-            echo $result;
+            //echo $result;
         }
 
         curl_close($ch);
