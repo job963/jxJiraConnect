@@ -3,33 +3,40 @@
 OXID eShop Admin Extension for Connecting with Atlassian JIRA
 
 
-## Setup ##
+## OXID Setup ##
+
+For installing and using the module, you have to proceed the following steps.
 
 1. Unzip the complete file with all the folder structures and upload the content of the folder copy_this to the root folder of your shop.
 2. After this navigate in the admin backend of the shop to _Extensions_ - _Modules_. Select the module _jxJiraConnect_ and click on `Activate`.
+4. Switch to the tab _Settings_ and setup the fields
+    * JIRA Server Url eg. https://jira.myserver.vom
+    * User and Password, eg. JiraUser / mypassword
+    * Values for project and author
+    * Field numbers (from JIRA) for customer no. and e-mail
 
-  
+## JIRA Setup ##
+
+The issues created by the module _jxJiraConnect_ have to have attributes which allows to assign these issues to customers. Therefore two additional custom fields have to be defined in JIRA.
+
 ## Screenshots ##
 
-#### Overview of found products ####
-![Object History Log](https://github.com/job963/jxUpdate/raw/master/docs/img/found-products.png)
-
 #### Settings ####
-![Full Log Report](https://github.com/job963/jxUpdate/raw/master/docs/img/settings-en.png)
+![Object History Log](https://github.com/job963/jxJiraConnect/raw/master/docs/img/settings-de.png)
 
-## Example Import Files ##
+#### Issue Info for each User ####
+![Full Log Report](https://github.com/job963/jxJiraConnect/raw/master/docs/img/user-jiraissues-de.png)
 
-#### Import for simple Deactivation ####
-    oxartnum
-    3503
-    1302
-    400-03
-  
-#### Import for Price Update ####
-    oxartnum;oxbprice;oxprice
-    3503;15.5;29.75
-    3504;12.5;24.75
-    400-01;3.5;7.75
+#### Issues of a User ####
+![Full Log Report](https://github.com/job963/jxJiraConnect/raw/master/docs/img/user-jiraissues-de.png)
+
+#### Issue Info for each Order/User ####
+![Full Log Report](https://github.com/job963/jxJiraConnect/raw/master/docs/img/user-jiraissues-de.png)
+
+#### Issues of a User/Order ####
+![Full Log Report](https://github.com/job963/jxJiraConnect/raw/master/docs/img/user-jiraissues-de.png)
+
+#### All open Issues ####
+![Full Log Report](https://github.com/job963/jxJiraConnect/raw/master/docs/img/user-allissues-de.png)
 
 
-**A detailed manual you'll find [here](https://github.com/job963/jxUpdate/blob/master/docs/help.md).**
