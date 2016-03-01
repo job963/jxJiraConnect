@@ -5,23 +5,36 @@ $iLangNr    = 1;
 
 $aLang = array(
 	'charset'                               => 'ISO-8859-15',
-	'tbcluser_jxjiraconnect'                	=> 'JIRA Issues',
+	'tbcluser_jxjiraconnect'                => 'JIRA Issues',
     
-	'tbclorder_jxjiraconnect'                	=> 'JIRA Issues',
+	'tbclorder_jxjiraconnect'               => 'JIRA Issues',
     
 	'jxjiraconnect_menu'                	=> 'JIRA Issues',
     
-        'JXJIRA_OPENISSUE' => 'open issue',
-        'JXJIRA_OPENISSUES' => 'open issues',
+        'JXJIRA_OPENISSUE'                      => 'open issue',
+        'JXJIRA_OPENISSUES'                     => 'open issues',
     
-        'JXJIRA_STATUSICON' => 'S',
-        'JXJIRA_KEY' => 'Key',
-        'JXJIRA_SUMMARY' => 'Summary',
-        'JXJIRA_STATUS' => 'Status',
-        'JXJIRA_CREATED' => 'Created',
-        'JXJIRA_CREATOR' => 'Creator',
-        'JXJIRA_DUEDATE' => 'Due date',
+        'JXJIRA_STATUSICON'                     => 'S',
+        'JXJIRA_KEY'                            => 'Key',
+        'JXJIRA_SUMMARY'                        => 'Summary',
+        'JXJIRA_STATUS'                         => 'Status',
+        'JXJIRA_CREATED'                        => 'Created',
+        'JXJIRA_CREATOR'                        => 'Creator',
+        'JXJIRA_DUEDATE'                        => 'Due date',
+        'JXJIRA_DESCRIPTION'                    => 'Description',
     
+        'JXJIRA_ISSUETYPE_ACCESS' => 'Zugriff',
+        'JXJIRA_ISSUETYPE_BUG' => 'Fehler/Mangel',
+        'JXJIRA_ISSUETYPE_FAULT' => 'St&ouml;rung',
+        'JXJIRA_ISSUETYPE_PURCHASE' => 'Bestellung',
+        'JXJIRA_ISSUETYPE_TASK' => 'Aufgabe',
+    
+        'JXJIRA_PRIORITY_BLOCKER' => 'Blocker',
+        'JXJIRA_PRIORITY_CRITICAL' => 'Kritisch',
+        'JXJIRA_PRIORITY_MAJOR' => 'Schwer',
+        'JXJIRA_PRIORITY_MINOR' => 'Unwesentlich',
+        'JXJIRA_PRIORITY_TRIVIAL' => 'Trivial',
+        
         'SHOP_MODULE_GROUP_JXJIRACONNECT_SERVER'    => 'JIRA Server',
         'SHOP_MODULE_sJxJiraConnectServerUrl'    => 'Server URL',
         'SHOP_MODULE_sJxJiraConnectProject'    => 'JIRA Project Key',

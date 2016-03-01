@@ -5,22 +5,35 @@ $iLangNr    = 0;
 
 $aLang = array(
 	'charset'                               => 'ISO-8859-15',
-	'tbcluser_jxjiraconnect'                	=> 'JIRA Vorg&auml;nge',
+	'tbcluser_jxjiraconnect'                => 'JIRA Vorg&auml;nge',
     
-	'tbclorder_jxjiraconnect'                	=> 'JIRA Vorg&auml;nge',
+	'tbclorder_jxjiraconnect'               => 'JIRA Vorg&auml;nge',
     
-	'jxjiraconnect_menu'                	=> 'JIRA Vorg&auml;nge',
+	'jxjiraconnect_menu'                    => 'JIRA Vorg&auml;nge',
     
-        'JXJIRA_OPENISSUE' => 'Vorgang offen',
-        'JXJIRA_OPENISSUES' => 'Vorg&auml;nge offen',
+        'JXJIRA_OPENISSUE'                      => 'Vorgang offen',
+        'JXJIRA_OPENISSUES'                     => 'Vorg&auml;nge offen',
     
-        'JXJIRA_STATUSICON' => 'S',
-        'JXJIRA_KEY' => 'Schl&uuml;ssel',
-        'JXJIRA_SUMMARY' => 'Zusammenfasung',
-        'JXJIRA_STATUS' => 'Status',
-        'JXJIRA_CREATED' => 'Erstellt',
-        'JXJIRA_CREATOR' => 'Autor',
-        'JXJIRA_DUEDATE' => 'F&auml;llig',
+        'JXJIRA_STATUSICON'                     => 'S',
+        'JXJIRA_KEY'                            => 'Schl&uuml;ssel',
+        'JXJIRA_SUMMARY'                        => 'Zusammenfasung',
+        'JXJIRA_STATUS'                         => 'Status',
+        'JXJIRA_CREATED'                        => 'Erstellt',
+        'JXJIRA_CREATOR'                        => 'Autor',
+        'JXJIRA_DUEDATE'                        => 'F&auml;llig am',
+        'JXJIRA_DESCRIPTION'                    => 'Beschreibung',
+    
+        'JXJIRA_ISSUETYPE_ACCESS' => 'Zugriff',
+        'JXJIRA_ISSUETYPE_BUG' => 'Fehler/Mangel',
+        'JXJIRA_ISSUETYPE_FAULT' => 'St&ouml;rung',
+        'JXJIRA_ISSUETYPE_PURCHASE' => 'Bestellung',
+        'JXJIRA_ISSUETYPE_TASK' => 'Aufgabe',
+    
+        'JXJIRA_PRIORITY_BLOCKER' => 'Blocker',
+        'JXJIRA_PRIORITY_CRITICAL' => 'Kritisch',
+        'JXJIRA_PRIORITY_MAJOR' => 'Schwer',
+        'JXJIRA_PRIORITY_MINOR' => 'Unwesentlich',
+        'JXJIRA_PRIORITY_TRIVIAL' => 'Trivial',
     
         'SHOP_MODULE_GROUP_JXJIRACONNECT_SERVER'    => 'JIRA Server',
         'SHOP_MODULE_sJxJiraConnectServerUrl'    => 'Server URL',

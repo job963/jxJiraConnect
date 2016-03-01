@@ -50,7 +50,7 @@
             <!-- SUBMENU id="mxugroups" cl="usergroup" list="usergroup_list">
                 <TAB id="tbclusergroup_history" cl="jxjiraconnect_details" />
             </SUBMENU -->
-            <SUBMENU id="jxjiraconnect_menu" cl="jxadminlog_allopen">
+            <SUBMENU id="jxjiraconnect_menu" cl="jxjiraconnect_allopen">
             </SUBMENU>
         </MAINMENU>
 
@@ -60,7 +60,5 @@
             </SUBMENU>
         </MAINMENU>
 
-        <!-- MAINMENU id="mxservice">
-        </MAINMENU -->
     </OXMENU>
 </OX>

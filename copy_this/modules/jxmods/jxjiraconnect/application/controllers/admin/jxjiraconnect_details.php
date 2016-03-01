@@ -62,6 +62,9 @@ class jxjiraconnect_details extends oxAdminDetails {
     }
     
     
+    /*
+     * 
+     */
     private function _jxJiraSearchIssues() 
     {
         $myConfig = oxRegistry::getConfig();
@@ -138,6 +141,9 @@ class jxjiraconnect_details extends oxAdminDetails {
     }
     
     
+    /*
+     * 
+     */
     private function _jxJiraCreateIssue() 
     {
         $myConfig = oxRegistry::getConfig();
@@ -152,6 +158,9 @@ class jxjiraconnect_details extends oxAdminDetails {
 
         $sIssueSummary = $this->getConfig()->getRequestParameter( 'jxjira_summary' );
         $sIssueDescription = $this->getConfig()->getRequestParameter( 'jxjira_description' );
+        $sIssueType = $this->getConfig()->getRequestParameter( 'jxjira_issuetype' );
+        $sPriority = $this->getConfig()->getRequestParameter( 'jxjira_priority' );
+        $sDueDate = $this->getConfig()->getRequestParameter( 'jxjira_duedate' );
 
         $soxId = $this->getEditObjectId();
         if ($soxId != "-1" && isset($soxId)) {
@@ -184,12 +193,14 @@ class jxjiraconnect_details extends oxAdminDetails {
                             "id" => "xxxx",
                             "description" => "xxxxx",
                             "iconUrl" => "xxxxx",*/
-                            'name' => 'Fault',
+                            'name' => $sIssueType,
                             'subtask' => false
                             ),
                         'assignee' => array(
                             'name' => $sAssignee
-                            )
+                            ),
+                        'priority' => array(name => $sPriority),
+                        'duedate' => $sDueDate
                         ),
             );        
 

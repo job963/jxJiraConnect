@@ -67,8 +67,8 @@ class jxjiraconnect_allopen extends oxAdminDetails {
         $sCustomerNumber = oxRegistry::getConfig()->getRequestParameter( 'jxcustomerno' );
 
         $aData = array(
-                    'jql' => $sFieldCustomerNumber . ' ~ ' . $sCustomerNumber . ' AND (status != Resolved AND status != Done)',
-                    'maxResults' => '1'
+                    'jql' => 'project = ' . $sProject . ' AND status != Resolved AND status != Done',
+                    'maxResults' => '100'
             );        
 
         $ch = curl_init();
@@ -87,7 +87,6 @@ class jxjiraconnect_allopen extends oxAdminDetails {
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $aHeaders);
-        //curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($aData));
         curl_setopt($ch, CURLOPT_URL, $sUrl);
         curl_setopt($ch, CURLOPT_USERPWD, "$sUsername:$sPassword");

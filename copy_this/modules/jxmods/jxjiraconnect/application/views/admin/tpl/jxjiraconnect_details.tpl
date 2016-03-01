@@ -72,11 +72,11 @@
                 <b>Setting <i>blLogChangesInAdmin</i> in <i>config.inc.php</i> is deactivated!</b><br />Actually no new admin action will be logged.
             </div>
         [{/if*}]
-        <form name="jxadminlog_history" id="jxadminlog_history" action="[{ $oViewConf->getSelfLink() }]" method="post">
+        [{*---<form name="jxadminlog_history" id="jxadminlog_history" action="[{ $oViewConf->getSelfLink() }]" method="post">
             [{ $oViewConf->getHiddenSid() }]
             <input type="hidden" name="oxid" value="[{ $oxid }]">
             <input type="hidden" name="cl" value="jxadminlog">
-            <input type="hidden" name="fnc" value="">
+            <input type="hidden" name="fnc" value="">---*}]
             [{*<input type="hidden" name="voucherdelid" value="">*}]
             <table cellspacing="0" cellpadding="0" border="0" width="99%">
                 <tr>
@@ -101,20 +101,38 @@
                     </tr>
                 [{/foreach}]
             </table>
-        </form>
+        [{*---</form>---*}]
             
         <br />
 
-        <form name="jxjiraconnect_details" id="jxjiraconnect_details" action="[{ $oViewConf->getSelfLink() }]" method="post">
+        <form name="jxjiraconnect_createissue" id="jxjiraconnect_details" action="[{ $oViewConf->getSelfLink() }]" method="post">
             [{ $oViewConf->getHiddenSid() }]
             <input type="hidden" name="oxid" value="[{ $oxid }]">
             <input type="hidden" name="cl" value="jxjiraconnect_details">
             <input type="hidden" name="fnc" value="jxJiraConnectCreateIssue">
             <table>
                 <tr>
-                    <td>Summary</td><td><input type="text" name="jxjira_summary" size="80" /></td>
+                    <td>[{ oxmultilang ident="JXJIRA_SUMMARY" }]</td><td>
+                        <input type="text" name="jxjira_summary" size="50" />
+                        <select name="jxjira_issuetype" width="20">
+                            <option value="Purchase">[{ oxmultilang ident="JXJIRA_ISSUETYPE_PURCHASE" }]</option>
+                            <option value="Bug">[{ oxmultilang ident="JXJIRA_ISSUETYPE_BUG" }]</option>
+                            <option value="Access">[{ oxmultilang ident="JXJIRA_ISSUETYPE_ACCESS" }]</option>
+                            <option value="Fault">[{ oxmultilang ident="JXJIRA_ISSUETYPE_FAULT" }]</option>
+                            <option value="Task">[{ oxmultilang ident="JXJIRA_ISSUETYPE_TASK" }]</option>
+                        </select>
+                        <select name="jxjira_priority" width="20">
+                            <option value="Blocker">[{ oxmultilang ident="JXJIRA_PRIORITY_BLOCKER" }]</option>
+                            <option value="Critical">[{ oxmultilang ident="JXJIRA_PRIORITY_CRITICAL" }]</option>
+                            <option value="Major" selected>[{ oxmultilang ident="JXJIRA_PRIORITY_MAJOR" }]</option>
+                            <option value="Minor">[{ oxmultilang ident="JXJIRA_PRIORITY_MINOR" }]</option>
+                            <option value="Trivial">[{ oxmultilang ident="JXJIRA_PRIORITY_TRIVIAL" }]</option>
+                        </select>
+                    </td>
                 </tr><tr>
-                    <td>Description</td><td><textarea cols="80" rows="5" name="jxjira_description"></textarea></td>
+                    <td>[{ oxmultilang ident="JXJIRA_DESCRIPTION" }]</td><td><textarea cols="80" rows="5" name="jxjira_description"></textarea></td>
+                </tr><tr>
+                    <td>[{ oxmultilang ident="JXJIRA_DUEDATE" }]</td><td><input type="text" name="jxjira_duedate" size="10" /></td>
                 </tr>
                 </tr><tr>
                     <td></td><td><input type="submit" /></td>
@@ -123,8 +141,8 @@
         </form>
     </div>
 
-    <div style="float:right;[{*position:relative;bottom:-40px;*}]padding-right:10px;">
-    [{*<br />
+    [{*<div style="float:right;/*position:relative;bottom:-40px;/padding-right:10px;">
+    <br />
             <a href="https://github.com/job963/jxAdminLog" target="_blank"><span style="color:gray;">jxAdminLog</span></a>
     </div>*}]
 
