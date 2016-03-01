@@ -25,13 +25,13 @@ The issues created by the module _jxJiraConnect_ have to have attributes which a
 ![Object History Log](https://github.com/job963/jxJiraConnect/raw/master/docs/img/settings-de.png)
 
 #### Issue Info for each User ####
-![Full Log Report](https://github.com/job963/jxJiraConnect/raw/master/docs/img/user-jiraissues-de.png)
+![Full Log Report](https://github.com/job963/jxJiraConnect/raw/master/docs/img/user-main-de.png)
 
 #### Issues of a User ####
 ![Full Log Report](https://github.com/job963/jxJiraConnect/raw/master/docs/img/user-jiraissues-de.png)
 
 #### Issue Info for each Order/User ####
-![Full Log Report](https://github.com/job963/jxJiraConnect/raw/master/docs/img/user-jiraissues-de.png)
+![Full Log Report](https://github.com/job963/jxJiraConnect/raw/master/docs/img/order-main-de.png)
 
 #### Issues of a User/Order ####
 ![Full Log Report](https://github.com/job963/jxJiraConnect/raw/master/docs/img/user-jiraissues-de.png)
