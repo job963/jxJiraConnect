@@ -6,8 +6,18 @@
     [{assign var="readonly" value=""}]
 [{/if}]
 
+[{assign var="cssFilePath" value=$oViewConf->getModulePath('jxjiraconnect','out/admin/src/jxjiraconnect.css') }]
+[{php}] 
+    $sCssFilePath = $this->get_template_vars('cssFilePath');;
+    $sCssTime = filemtime( $sCssFilePath );
+    $this->assign('cssTime', $sCssTime);
+[{/php}]
+[{assign var="cssFileUrl" value=$oViewConf->getModuleUrl('jxjiraconnect','out/admin/src/jxjiraconnect.css') }]
+[{assign var="cssFileUrl" value="$cssFileUrl?$cssTime" }]
+<link href="[{$cssFileUrl}]" type="text/css" rel="stylesheet">
+[{assign var="imgIconUrl" value=$oViewConf->getModuleUrl('jxjiraconnect','out/admin/src/img') }]
 
-<style>
+[{*<style>
     #liste tr:hover td{
         background-color: #e0e0e0;
     }
@@ -53,7 +63,7 @@
         border: 1px solid cornflowerblue;
         border-radius: 3px;
     }
-</style>
+</style>*}]
 
 
 <form name="transfer" id="transfer" action="[{ $oViewConf->getSelfLink() }]" method="post">
@@ -83,6 +93,7 @@
                     <td class="listheader">&nbsp;[{ oxmultilang ident="JXJIRA_STATUSICON" }]</td>
                     <td class="listheader">[{ oxmultilang ident="JXJIRA_KEY" }]</td>
                     <td class="listheader">[{ oxmultilang ident="JXJIRA_SUMMARY" }]</td>
+                    <td class="listheader">[{ oxmultilang ident="JXJIRA_PRIORITY" }]</td>
                     <td class="listheader">[{ oxmultilang ident="JXJIRA_STATUS" }]</td>
                     <td class="listheader">[{ oxmultilang ident="JXJIRA_CREATED" }]</td>
                     <td class="listheader">[{ oxmultilang ident="JXJIRA_CREATOR" }]</td>
@@ -94,6 +105,7 @@
                         <td class="[{ $listclass }]" style="height: 20px;">&nbsp;<img src="[{$aIssue.fields.issuetype.iconUrl}]" /></td>
                         <td class="[{ $listclass }]"><a href="[{$sIssueUrl}][{$aIssue.key}]" target="_blank">[{$aIssue.key}]</a></td>
                         <td class="[{ $listclass }]" title="[{$aIssue.fields.description}]"><a href="[{$sIssueUrl}][{$aIssue.key}]" title="[{$aIssue.fields.description}]" target="_blank">[{$aIssue.fields.summary}]</a></td>
+                        <td class="[{ $listclass }]"><img src="[{$imgIconUrl}]/priority[{$aIssue.fields.priority.id}].png" /> [{ oxmultilang ident="JXJIRA_PRIORITY_"|cat:$aIssue.fields.priority.id }]</td>
                         <td class="[{ $listclass }]"><span class="jira-status-[{$aIssue.fields.status.statusCategory.colorName}]">&nbsp;[{$aIssue.fields.status.name}]&nbsp;</span></td>
                         <td class="[{ $listclass }]">[{$aIssue.fields.created|substr:0:10}]</td>
                         <td class="[{ $listclass }]">[{$aIssue.fields.creator.displayName}]</td>
@@ -122,11 +134,11 @@
                             <option value="Task">[{ oxmultilang ident="JXJIRA_ISSUETYPE_TASK" }]</option>
                         </select>
                         <select name="jxjira_priority" width="20">
-                            <option value="Blocker">[{ oxmultilang ident="JXJIRA_PRIORITY_BLOCKER" }]</option>
-                            <option value="Critical">[{ oxmultilang ident="JXJIRA_PRIORITY_CRITICAL" }]</option>
-                            <option value="Major" selected>[{ oxmultilang ident="JXJIRA_PRIORITY_MAJOR" }]</option>
-                            <option value="Minor">[{ oxmultilang ident="JXJIRA_PRIORITY_MINOR" }]</option>
-                            <option value="Trivial">[{ oxmultilang ident="JXJIRA_PRIORITY_TRIVIAL" }]</option>
+                            <option value="Blocker">[{ oxmultilang ident="JXJIRA_PRIORITY_1" }]</option>
+                            <option value="Critical">[{ oxmultilang ident="JXJIRA_PRIORITY_2" }]</option>
+                            <option value="Major" selected>[{ oxmultilang ident="JXJIRA_PRIORITY_3" }]</option>
+                            <option value="Minor">[{ oxmultilang ident="JXJIRA_PRIORITY_4" }]</option>
+                            <option value="Trivial">[{ oxmultilang ident="JXJIRA_PRIORITY_5" }]</option>
                         </select>
                     </td>
                 </tr><tr>
