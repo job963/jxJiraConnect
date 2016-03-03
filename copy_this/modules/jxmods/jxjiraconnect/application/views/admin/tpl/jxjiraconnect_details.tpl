@@ -17,54 +17,6 @@
 <link href="[{$cssFileUrl}]" type="text/css" rel="stylesheet">
 [{assign var="imgIconUrl" value=$oViewConf->getModuleUrl('jxjiraconnect','out/admin/src/img') }]
 
-[{*<style>
-    #liste tr:hover td{
-        background-color: #e0e0e0;
-    }
-
-    #liste td.activetime {
-        background-image: url(bg/ico_activetime.png);
-        min-width: 17px;
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
-    .listitem, .listitem2 {
-        padding-left: 4px;
-        padding-right: 16px;
-        white-space: nowrap;
-    }
-    .jira-status-medium-gray {
-        color: dimgray;
-        border: 1px solid gray;
-        border-radius: 3px;
-    }
-    .jira-status-yellow {
-        color: darkgoldenrod;
-        border: 1px solid goldenrod;
-        border-radius: 3px;
-    }
-    .jira-status-green {
-        color: green;
-        border: 1px solid green;
-        border-radius: 3px;
-    }
-    .jira-status-brown {
-        color: saddlebrown;
-        border: 1px solid brown;
-        border-radius: 3px;
-    }
-    .jira-status-warm-red {
-        color: firebrick;
-        border: 1px solid crimson;
-        border-radius: 3px;
-    }
-    .jira-status-blue-gray {
-        color: royalblue;
-        border: 1px solid cornflowerblue;
-        border-radius: 3px;
-    }
-</style>*}]
-
 
 <form name="transfer" id="transfer" action="[{ $oViewConf->getSelfLink() }]" method="post">
     [{ $oViewConf->getHiddenSid() }]
@@ -73,21 +25,8 @@
 </form>
 
 
-<div style="height:92%;">
-
     [{*$iIssueCount*}]
-    <div id="liste" style="border:0px solid gray; padding:4px; width:99%; height:95%; overflow-y:scroll; float:left;">
-        [{*if $blAdminLog == FALSE }]
-            <div style="border:2px solid #dd0000;margin:10px;padding:5px;background-color:#ffdddd;font-family:sans-serif;font-size:14px;">
-                <b>Setting <i>blLogChangesInAdmin</i> in <i>config.inc.php</i> is deactivated!</b><br />Actually no new admin action will be logged.
-            </div>
-        [{/if*}]
-        [{*---<form name="jxadminlog_history" id="jxadminlog_history" action="[{ $oViewConf->getSelfLink() }]" method="post">
-            [{ $oViewConf->getHiddenSid() }]
-            <input type="hidden" name="oxid" value="[{ $oxid }]">
-            <input type="hidden" name="cl" value="jxadminlog">
-            <input type="hidden" name="fnc" value="">---*}]
-            [{*<input type="hidden" name="voucherdelid" value="">*}]
+    <div id="liste" style="border:0px solid gray; padding:4px; width:99%; height:45%; overflow-y:scroll;">
             <table cellspacing="0" cellpadding="0" border="0" width="99%">
                 <tr>
                     <td class="listheader">&nbsp;[{ oxmultilang ident="JXJIRA_STATUSICON" }]</td>
@@ -113,10 +52,11 @@
                     </tr>
                 [{/foreach}]
             </table>
-        [{*---</form>---*}]
+    </div>
             
-        <br />
-
+    <div style="height:20px;">&nbsp;</div>
+    
+    <div>
         <form name="jxjiraconnect_createissue" id="jxjiraconnect_details" action="[{ $oViewConf->getSelfLink() }]" method="post">
             [{ $oViewConf->getHiddenSid() }]
             <input type="hidden" name="oxid" value="[{ $oxid }]">
@@ -142,7 +82,7 @@
                         </select>
                     </td>
                 </tr><tr>
-                    <td>[{ oxmultilang ident="JXJIRA_DESCRIPTION" }]</td><td><textarea cols="80" rows="5" name="jxjira_description"></textarea></td>
+                    <td valign="top">[{ oxmultilang ident="JXJIRA_DESCRIPTION" }]</td><td><textarea cols="80" rows="3" name="jxjira_description"></textarea></td>
                 </tr><tr>
                     <td>[{ oxmultilang ident="JXJIRA_DUEDATE" }]</td><td><input type="text" name="jxjira_duedate" size="10" /></td>
                 </tr>
@@ -153,13 +93,6 @@
         </form>
     </div>
 
-    [{*<div style="float:right;/*position:relative;bottom:-40px;/padding-right:10px;">
-    <br />
-            <a href="https://github.com/job963/jxAdminLog" target="_blank"><span style="color:gray;">jxAdminLog</span></a>
-    </div>*}]
-
-</div>
-
-[{*include file="bottomnaviitem.tpl"*}]
+[{include file="bottomnaviitem.tpl"}]
 [{include file="bottomitem.tpl"}]
 

@@ -123,7 +123,6 @@ class jxjiraconnect_details extends oxAdminDetails {
         if ($ch_error) {
             echo "cURL Error: $ch_error";
         } else {
-            //echo $result;
             $aResult = json_decode($result,true);
             $iIssueCount = $aResult['total'];
             $aIssues = $aResult['issues'];
@@ -199,10 +198,12 @@ class jxjiraconnect_details extends oxAdminDetails {
                         'assignee' => array(
                             'name' => $sAssignee
                             ),
-                        'priority' => array(name => $sPriority),
-                        'duedate' => $sDueDate
+                        'priority' => array(name => $sPriority)
                         ),
             );        
+        if (!empty($sDueDate)) {
+            $aData['fields']['duedate'] = $sDueDate;
+        }
 
 	/*echo '<pre>';
 	print_r(json_encode(json_decode(json_encode($aData)),JSON_PRETTY_PRINT));
