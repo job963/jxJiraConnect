@@ -6,20 +6,23 @@ $sMetadataVersion = '1.1';
  
 /**
  * Module information
+ * 
+ * @link      https://github.com/job963/jxJiraConnect
+ * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
+ * @copyright (C) 2016-2017 Joachim Barthel
+ * @author    Joachim Barthel <jobarthel@gmail.com>
  */
 $aModule = array(
     'id'           => 'jxjiraconnect',
     'title'        => 'jxJiraConnect - Connect OXID eShop with Atlassian Jira',
     'description'  => array(
-                        'de' => 'Anzeige der protokollierten Admin Aktionen an jedem Objekt und als Gesamtbericht.<br /><br />'
-                                . '(um das Logging zu aktivieren muss in der Datei config.inc.php die Einstellung<br />'
-                                . '<code>$this->blLogChangesInAdmin = false;</code> auf <code>True</code> geändert werden)<br /><br />',
-                        'en' => 'Display of Logged Administrative Actions for each Object and as full Report.<br /><br />'
-                                . '(for enabling the logging you have to change the setting<br />'
-                                . '<code>$this->blLogChangesInAdmin = false;</code> to <code>True</code>)<br /><br />'
+                        'de' => 'Anzeige und Erstellung von JIRA Tickets je Kunde, Bestellung, inkl. Gesamtübersicht.<br /><br />'
+                                . '(Bitte die Anleitung auf <a href="https://github.com/job963/jxJiraConnect/blob/master/README.md" target="_blank">Github</a> lesen)<br /><br />',
+                        'en' => 'Display and creation of JIRA issues acc. customers and orders, incl. overall view.<br /><br />'
+                                . '(Please read the setup manual on <a href="https://github.com/job963/jxJiraConnect/blob/master/README.md" target="_blank">Github</a>)<br /><br />'
                         ),
     'thumbnail'    => 'jxjiraconnect.png',
-    'version'      => '0.1',
+    'version'      => '0.1.1',
     'author'       => 'Joachim Barthel',
     'url'          => 'https://github.com/job963/jxJiraConnect',
     'email'        => 'jobarthel@gmail.com',

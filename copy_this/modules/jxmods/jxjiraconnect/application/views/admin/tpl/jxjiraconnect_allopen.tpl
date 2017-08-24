@@ -26,7 +26,6 @@
 
 
 <div style="height:92%;">
-
     [{*$iIssueCount*}]
     <div id="liste" style="border:0px solid gray; padding:4px; width:99%; height:95%; overflow-y:scroll;">
             <table cellspacing="0" cellpadding="0" border="0" width="99%">
@@ -46,12 +45,12 @@
                     <tr>
                         <td class="[{ $listclass }]" style="height: 20px;">&nbsp;<img src="[{$aIssue.fields.issuetype.iconUrl}]" /></td>
                         <td class="[{ $listclass }]"><a href="[{$sIssueUrl}][{$aIssue.key}]" target="_blank">[{$aIssue.key}]</a></td>
-                        <td class="[{ $listclass }]" title="[{$aIssue.fields.description}]"><a href="[{$sIssueUrl}][{$aIssue.key}]" title="[{$aIssue.fields.description}]" target="_blank">[{$aIssue.fields.summary}]</a></td>
+                        <td class="[{ $listclass }]" title="[{$aIssue.fields.description|escape:'html'}]"><a href="[{$sIssueUrl}][{$aIssue.key}]" title="[{$aIssue.fields.description|escape:'html'}]" target="_blank">[{$aIssue.fields.summary|escape:'html'}]</a></td>
                         <td class="[{ $listclass }]">[{$aIssue.fields.customfield_10206 }]</td>
                         <td class="[{ $listclass }]"><img src="[{$imgIconUrl}]/priority[{$aIssue.fields.priority.id}].png" /> [{ oxmultilang ident="JXJIRA_PRIORITY_"|cat:$aIssue.fields.priority.id }]</td>
                         <td class="[{ $listclass }]"><span class="jira-status-[{$aIssue.fields.status.statusCategory.colorName}]">&nbsp;[{$aIssue.fields.status.name}]&nbsp;</span></td>
                         <td class="[{ $listclass }]">[{$aIssue.fields.created|substr:0:10}]</td>
-                        <td class="[{ $listclass }]">[{$aIssue.fields.creator.displayName}]</td>
+                        <td class="[{ $listclass }]">[{$aIssue.fields.creator.displayName|escape:'html'}]</td>
                         <td class="[{ $listclass }]">[{$aIssue.fields.duedate}]</td>
                     </tr>
                 [{/foreach}]
@@ -70,4 +69,3 @@
 
 [{*include file="bottomnaviitem.tpl"*}]
 [{include file="bottomitem.tpl"}]
-
